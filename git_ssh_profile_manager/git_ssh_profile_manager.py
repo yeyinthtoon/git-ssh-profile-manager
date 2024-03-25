@@ -54,6 +54,8 @@ def create_profile(
     include_if_configs[str(git_config_for_profile)] = []
     if gitdirs:
         for gitdir in gitdirs:
+            if not gitdir.endswith("/"):
+                gitdir += "/"
             include_if_configs[str(git_config_for_profile)].append(("gitdir", gitdir))
     if onbranchs:
         for onbranch in onbranchs:
@@ -106,6 +108,8 @@ def add_new_includeif_rules(
 
     if gitdirs:
         for gitdir in gitdirs:
+            if not gitdir.endswith("/"):
+                gitdir += "/"
             include_if_configs[str(git_config_for_profile)].append(("gitdir", gitdir))
     if onbranchs:
         for onbranch in onbranchs:
@@ -121,8 +125,10 @@ def add_new_includeif_rules(
     with open(BaseGitConfigFilePath, "w", encoding="utf-8") as bgcf:
         bgcf.write(config_str)
 
+
 def cli_main():
     app()
+
 
 if __name__ == "__main__":
     cli_main()
