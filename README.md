@@ -1,3 +1,7 @@
+# Installation
+```
+pip install git+https://github.com/yeyinthtoon/git-ssh-profile-manager.git
+```
 # Command
 ```
 git-ssh-profile-manager --help
