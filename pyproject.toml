@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling >= 1.9.4"]
+build-backend = "hatchling.build"
+
+[project]
+name = "git_ssh_profile_manager"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+authors = [
+    { name = "Ye Yint Htoon", email = "yeyinthtoon.yyh@gmail.com" },
+]
+dependencies = [
+    "typer>=0.10.0",
+]
+dynamic = ["version"]
+
+[tool.hatch.version]
+path = "git_ssh_profile_manager/__init__.py"
+
+[project.scripts]
+git-ssh-profile-manager = "git_ssh_profile_manager.git_ssh_profile_manager:cli_main"
